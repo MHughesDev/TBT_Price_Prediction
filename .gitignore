@@ -9,7 +9,7 @@ exports/*.parquet
 __pycache__/
 *.pyc
 
-# Built workbooks: 20-25 MB each, regenerate with build/build_docs.py
-dist/*.xlsx
+# dist/*.xlsx workbooks ARE committed (20-25 MB each, under GitHub's limit) — v5 and v5.4
+# both, since v5.4 is not a strict superset (see docs/MODEL_CARD.md history / commit log).
 # Validation outputs: regenerate with service/validate*.py
 service/validation_*.csv
