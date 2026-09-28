@@ -1,0 +1,15 @@
+# Pipeline intermediates — regenerate with build/ scripts
+build/*.pkl
+build/v5_core.xlsx
+build/v5_ml.xlsx
+build/v5_dash.xlsx
+build/TBT_Tank_Quote_Analytics_v5.xlsx
+exports/*.csv
+exports/*.parquet
+__pycache__/
+*.pyc
+
+# Built workbooks: 20-25 MB each, regenerate with build/build_docs.py
+dist/*.xlsx
+# Validation outputs: regenerate with service/validate*.py
+service/validation_*.csv

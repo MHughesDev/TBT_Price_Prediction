@@ -1,0 +1,150 @@
+{
+ "typical_cs_fire_protection": {
+  "material": {
+   "price": 88233.12,
+   "expected": 93337.57,
+   "low": 69954.35,
+   "high": 111288.06,
+   "in_scope": true
+  },
+  "fabrication": {
+   "price": 43148.35,
+   "expected": 45505.57,
+   "low": 35960.63,
+   "high": 51772.73,
+   "in_scope": true
+  },
+  "construction": {
+   "price": 64182.72,
+   "expected": 74671.56,
+   "low": 48392.59,
+   "high": 85125.05,
+   "in_scope": true
+  },
+  "insul_material": {
+   "price": 0.0,
+   "expected": 0.0,
+   "low": null,
+   "high": null,
+   "in_scope": false
+  },
+  "insul_construction": {
+   "price": 0.0,
+   "expected": 0.0,
+   "low": null,
+   "high": null,
+   "in_scope": false
+  }
+ },
+ "large_waste_water_prevailing": {
+  "material": {
+   "price": 424164.73,
+   "expected": 638268.15,
+   "low": 336292.85,
+   "high": 534997.17,
+   "in_scope": true
+  },
+  "fabrication": {
+   "price": 122913.53,
+   "expected": 132522.55,
+   "low": 102438.41,
+   "high": 147481.16,
+   "in_scope": true
+  },
+  "construction": {
+   "price": 465039.14,
+   "expected": 565591.22,
+   "low": 350630.94,
+   "high": 616777.85,
+   "in_scope": true
+  },
+  "insul_material": {
+   "price": 119886.67,
+   "expected": 136523.67,
+   "low": 110044.65,
+   "high": 130608.93,
+   "in_scope": true
+  },
+  "insul_construction": {
+   "price": 147792.24,
+   "expected": 158094.63,
+   "low": 115509.97,
+   "high": 189096.62,
+   "in_scope": true
+  }
+ },
+ "materials_only_export_mx": {
+  "material": {
+   "price": 122606.57,
+   "expected": 138616.85,
+   "low": 92227.77,
+   "high": 162991.8,
+   "in_scope": true
+  },
+  "fabrication": {
+   "price": 24619.85,
+   "expected": 28996.67,
+   "low": 18481.99,
+   "high": 32796.09,
+   "in_scope": true
+  },
+  "construction": {
+   "price": 0.0,
+   "expected": 0.0,
+   "low": null,
+   "high": null,
+   "in_scope": false
+  },
+  "insul_material": {
+   "price": 0.0,
+   "expected": 0.0,
+   "low": null,
+   "high": null,
+   "in_scope": false
+  },
+  "insul_construction": {
+   "price": 0.0,
+   "expected": 0.0,
+   "low": null,
+   "high": null,
+   "in_scope": false
+  }
+ },
+ "small_silo": {
+  "material": {
+   "price": 43589.11,
+   "expected": 46412.97,
+   "low": 34558.99,
+   "high": 54978.76,
+   "in_scope": true
+  },
+  "fabrication": {
+   "price": 52157.33,
+   "expected": 60362.62,
+   "low": 43468.88,
+   "high": 62582.4,
+   "in_scope": true
+  },
+  "construction": {
+   "price": 50223.28,
+   "expected": 54022.89,
+   "low": 37867.43,
+   "high": 66610.75,
+   "in_scope": true
+  },
+  "insul_material": {
+   "price": 0.0,
+   "expected": 0.0,
+   "low": null,
+   "high": null,
+   "in_scope": false
+  },
+  "insul_construction": {
+   "price": 0.0,
+   "expected": 0.0,
+   "low": null,
+   "high": null,
+   "in_scope": false
+  }
+ }
+}
