@@ -1,7 +1,0 @@
-# Bundles are build outputs: large, reproducible from exports/ + ml/tuned_params.json.
-# Rebuild with `python service/train.py`.
-# NOTE: bundles became gzipped (.pkl.gz) when they grew past 140 MB; a bare *.pkl rule
-# stopped matching them and 5 GB of them showed up as untracked. Keep both patterns.
-*.pkl
-*.pkl.gz
-validation/

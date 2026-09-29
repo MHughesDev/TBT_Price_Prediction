@@ -1,15 +1,4 @@
-# Pipeline intermediates — regenerate with build/ scripts
-build/*.pkl
-build/v5_core.xlsx
-build/v5_ml.xlsx
-build/v5_dash.xlsx
-build/TBT_Tank_Quote_Analytics_v5.xlsx
-exports/*.csv
-exports/*.parquet
+# Rebuilt by prepare.py and backtest.py
+data/tanks.parquet
+results/predictions/
 __pycache__/
-*.pyc
-
-# dist/*.xlsx workbooks ARE committed (20-25 MB each, under GitHub's limit) — v5 and v5.4
-# both, since v5.4 is not a strict superset (see docs/MODEL_CARD.md history / commit log).
-# Validation outputs: regenerate with service/validate*.py
-service/validation_*.csv
