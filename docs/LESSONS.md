@@ -10,6 +10,7 @@ Each of these was learned the hard way. Results live in `results/SCOREBOARD.md`,
 | `init_score` of all zeros is not "no offset". | It switches off LightGBM's starting average. With an L1 objective the model then learns nothing and predicts a constant. Pass `None`. |
 | The offset must be a level, never a trend. | A time trend in the offset extrapolated past the training dates: material bias −22% two quarters out. |
 | Summing medians under-states the book. | The median is right for one tank. Added up over many tanks, it runs about 7% low. A mean model (`lgbm_gamma`) targets the sum. |
+| Weight every bucket fully by dollars. | Lower weights on construction and fabrication traded dollars for % accuracy, and lost on the scoreboard. |
 | Value weighting needs the eligibility filter. | With price-weighted samples, one corrupt $1.19 trillion row would have outweighed millions of real ones. `methods/lgbm.py` asserts on it. |
 | Scope is an input, not a prediction. | Guessing erection/insulation scope is 93–95% right, and a miss costs ~$88K. That is far worse than normal pricing error. |
 | One pooled model beats one model per tank type. | There is not enough data per type yet. |

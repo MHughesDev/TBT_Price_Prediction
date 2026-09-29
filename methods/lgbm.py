@@ -1,7 +1,7 @@
-"""LightGBM on log price, one model per bucket - the recipe that was in production.
+"""LightGBM on log price, one model per bucket - the old production recipe, dollar-weighted.
 
 Per bucket: start from a simple size-and-grade guess (the "offset"), let LightGBM learn the
-correction, weight expensive tanks more, add older revisions at half weight, average 4 seeds.
+correction, weight each tank by its dollars, add older revisions at half weight, average 4 seeds.
 """
 import numpy as np
 import pandas as pd
@@ -11,11 +11,6 @@ from prepare import FEATURES, PRICE
 
 SEEDS = 4
 REVISION_WEIGHT = 0.5   # older revisions of a quote are real prices too, just less final
-
-# Weight each tank by (price / median price) ** alpha, so a $2M tank counts more than a $20K
-# one. Higher alpha buys dollar accuracy at some cost in per-tank % accuracy.
-VALUE_ALPHA = {'material': 1.0, 'fabrication': 0.25, 'construction': 0.5,
-               'insul_material': 1.0, 'insul_construction': 1.0}
 
 # The offset: log(area) + a typical log($/sqft) for the tank's group. The group level is
 # shrunk toward the overall level when the group is small. None = no group, area only.
@@ -53,7 +48,9 @@ def training_rows(train, bucket):
     """Tanks that have a price in this bucket, and a sample weight for each."""
     rows = train[train[PRICE[bucket]] > 0]
     price = rows[PRICE[bucket]].to_numpy()
-    weight = (price / np.median(price)) ** VALUE_ALPHA[bucket]
+    # Weight by dollars: a $2M tank counts 100x a $20K one, because dollars are what we are
+    # judged on. Weaker weighting on some buckets bought % accuracy and lost dollars.
+    weight = price / np.median(price)
     weight *= np.where(rows['is_firmest'] == 1, 1.0, REVISION_WEIGHT)
     weight /= weight.mean()
     # One corrupt price can get a giant weight. A $1.19 trillion row once reached training.
