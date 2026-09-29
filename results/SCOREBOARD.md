@@ -6,16 +6,17 @@ before the quarter it was predicting.
 
 **Error = |predicted - actual| of the five bucket prices added up, per tank.** Freight and
 tax are known, identical on both sides, and cancel out, so they are left out. The method
-with the lowest total $ error leads.
+with the lowest total $ error leads. The % columns are for context only: the median is a
+typical tank, and the mean is pulled up by a few cheap tanks with big % misses.
 
 ## Standings
 
-| method | total $ error | mean $ error per tank | median $ error per tank | book bias (predicted - actual) | median % error |
-|---|---|---|---|---|---|
-| lgbm | $115,655,790 | $42,087 | $11,891 | -$48,158,731 | 6.9% |
-| ensemble | $121,632,690 | $44,262 | $12,169 | -$68,137,787 | 6.9% |
-| lgbm_gamma | $123,694,360 | $45,013 | $14,256 | -$41,697,379 | 7.7% |
-| rate_table | $232,260,708 | $84,520 | $29,320 | -$29,491,057 | 17.2% |
+| method | total $ error | mean $ error per tank | median $ error per tank | book bias (predicted - actual) | median % error | mean % error |
+|---|---|---|---|---|---|---|
+| lgbm | $115,655,790 | $42,087 | $11,891 | -$48,158,731 | 6.9% | 11.0% |
+| ensemble | $121,632,690 | $44,262 | $12,169 | -$68,137,787 | 6.9% | 10.7% |
+| lgbm_gamma | $123,694,360 | $45,013 | $14,256 | -$41,697,379 | 7.7% | 12.0% |
+| rate_table | $232,260,708 | $84,520 | $29,320 | -$29,491,057 | 17.2% | 23.6% |
 
 ## Is the leader's win real?
 

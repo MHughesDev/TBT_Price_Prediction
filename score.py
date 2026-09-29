@@ -44,6 +44,7 @@ def standings(runs):
             'median $ error per tank': money(run['error'].median()),
             'book bias (predicted - actual)': money(run['predicted'].sum() - run['actual'].sum()),
             'median % error': f"{100 * (run['error'] / run['actual']).median():.1f}%",
+            'mean % error': f"{100 * (run['error'] / run['actual']).mean():.1f}%",
         })
     table = pd.DataFrame(rows).sort_values('total $ error').reset_index(drop=True)
     table['total $ error'] = table['total $ error'].map(money)
@@ -106,7 +107,8 @@ before the quarter it was predicting.
 
 **Error = |predicted - actual| of the five bucket prices added up, per tank.** Freight and
 tax are known, identical on both sides, and cancel out, so they are left out. The method
-with the lowest total $ error leads.
+with the lowest total $ error leads. The % columns are for context only: the median is a
+typical tank, and the mean is pulled up by a few cheap tanks with big % misses.
 
 ## Standings
 
